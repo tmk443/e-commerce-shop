@@ -1,0 +1,15 @@
+{% autoescape off %}
+
+
+Hej,
+
+Dziękujemy za rejestracje w naszym sklepie!
+
+
+Aby dokończyć rejestrację musisz potwierdzić swój adres email, klikając w link poniżej:
+
+
+http://{{domain}}{% url 'email-verification' uidb64=uid token=token %}
+
+
+{% endautoescape  %}

@@ -1,0 +1,85 @@
+
+{% include "store/base.html" %}
+
+{% load static %}
+
+{% load crispy_forms_tags %}
+
+
+{% block content %}
+
+    <style>
+
+
+        body{
+
+
+            background-color: gray;
+
+        }
+
+
+
+    </style>
+
+
+
+
+    <body>
+
+        <br>
+
+        <div class="container bg-white shadow-md p-5 form-layout">
+
+            <h3> Usuń swoje konto</h3>
+
+
+            <hr>
+           
+
+            <form method="POST" autocomplete="off">
+
+                {% csrf_token %}
+
+                <p> Na pewno chcesz usunąć swoj konto? </p>
+                <br>
+                <a class="btn btn-primary btn-lg w-100 btn-block p-2" type="submit" href="{% url 'profile-management' %}"><i class="fa fa-arrow-left" aria-hidden="true"></i> &nbsp; Powrót</a>
+
+                <br><br>
+
+                <button type="submit" class="btn btn-danger btn-lg w-100 btn-block p-2"> &nbsp; Usuń swoje konto </button>
+
+                <br> <br>
+
+
+
+
+            </form>
+
+
+
+
+
+        </div>
+        <br>
+        
+
+
+    </body>
+
+    <br> <br>
+
+
+{% endblock %}
+
+
+
+
+
+
+
+
+
+
+
+

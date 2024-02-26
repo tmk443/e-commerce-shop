@@ -1,0 +1,109 @@
+
+{% include "store/base.html" %}
+
+{% load static %}
+
+{% load crispy_forms_tags %}
+
+
+{% block content %}
+
+    <style>
+
+
+        body{
+
+
+            background-color: gray;
+
+        }
+
+
+
+    </style>
+
+
+
+
+    <body>
+
+        <br>
+
+        <div class="container bg-white shadow-md p-5 form-layout text-center">
+
+            <h2> Zarządzanie kontem </h2>
+
+            <hr>
+         
+        </div>
+
+        <br>
+
+        <div class="container bg-white shadow-md p-5 form-layout">
+
+            <h3> Zaktualizuj swoje dane </h3>
+
+
+            <hr>
+            <br>
+
+            <form method="POST" autocomplete="off">
+
+                {% csrf_token %}
+
+                {{user_form.username|as_crispy_field}}
+
+                <br> <br>
+
+
+                {{user_form.email|as_crispy_field}}
+
+
+                <br> <br>
+                
+                <button type="submit" class="btn btn-primary navbar-btn text-white w-100 p-2"> &nbsp; Zaktualizuj dane </button>
+                <br><br>
+                
+
+                <br> <br>
+
+
+
+
+            </form>
+
+
+
+
+
+        </div>
+        <br><br>
+
+
+        <div class="container bg-white shadow-md p-5 form-layout">
+
+            <h3> Usuń swoje konto </h3>
+
+            
+            <hr>
+            <br>
+            <a class="btn btn-primary btn-lg w-100 btn-block p-2" type="submit" href="{% url 'delete-account' %}"> &nbsp; Usuń swoje konto </a>
+        </div>
+    </body>
+
+    <br> <br>
+
+
+{% endblock %}
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,82 @@
+
+{% include "store/base.html" %}
+
+{% load static %}
+
+{% load crispy_forms_tags %}
+
+
+{% block content %}
+
+
+<style>
+
+
+    body{
+
+
+        background-color: gray;
+
+    }
+
+
+
+</style>
+<body>
+    <br>
+
+    <div class="container bg-white shadow-md p-5 form-layout">
+
+        <h3>  Witaj! {{user}}</h3>
+
+
+        <hr>
+        <br>
+
+        <p>To jest twój panel kontrolny, w którym możesz: </p>
+        <li> Śledzić swoje zamówienia</li>
+        <li>Zarządzać swoim kontem</li>
+        <li>Wylogować się</li>
+
+
+        <a class="btn btn-alert navbar-btn text-white" type="button"  href="{% url 'user-logout' %}"> Wyloguj się </a>
+    </div>
+    <br>
+
+    <div class="container bg-white shadow-md p-5 form-layout">
+            <h4>Śledź swoje zamówienia</h4>
+            <hr>
+            
+            <p>Sledź swoje zamówienia</p>
+            <a class="btn btn-primary navbar-btn text-white" type="button"  href="{% url 'track-orders' %}"> Moje zamówienia </a>
+    </div>
+
+    <br>
+
+    <div class="container bg-white shadow-md p-5 form-layout">
+        <h4>Zarządzaj swoim kontem</h4>
+
+        <hr>
+        
+        <p>Zaktualizuj swoje dane</p>
+        
+        <a class="btn btn-primary navbar-btn text-white" type="button"  href="{% url 'profile-management' %}"> Zarządzanie kontem </a>
+        <br><br>
+        <a class="btn btn-danger navbar-btn text-white" type="button"  href="{% url 'user-logout' %}"> Wyloguj się </a>
+    </div>
+
+    <br>
+
+    <div class="container bg-white shadow-md p-5 form-layout">
+        <h4>Zarządzaj danymi do wysyłki</h4>
+
+        <hr>
+        
+        <p>Zaktualizuj swoje dane do wysyłki</p>
+        
+        <a class="btn btn-primary navbar-btn text-white" type="button"  href="{% url 'manage-shipping' %}"> Zarządzanie danymi do wysyłki </a>
+        <br>
+
+</body>
+
+{% endblock %}
